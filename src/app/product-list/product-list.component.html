@@ -3,7 +3,8 @@
 <div *ngFor="let product of products">
  
   <h3>
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+    <!--The RouterLink directive gives the router control over the anchor element. In this case, the route (URL) contains one fixed segment (/products) and the final segment is variable, inserting the id property of the current product. For example, the URL for a product with an id of 1 will be similar to https://getting-started-myfork.stackblitz.io/products/1.-->
       {{ product.name }}
     </a>
   </h3>
